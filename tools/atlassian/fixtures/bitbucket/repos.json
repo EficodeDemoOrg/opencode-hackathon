@@ -1,0 +1,5 @@
+{"values":[
+{"slug":"inventory-app","name":"Inventory App","description":"Small hardware inventory app (Java, SQLite)","updated_on":"2026-11-03T13:02:00+00:00","language":"java"},
+{"slug":"warehouse-reports","name":"Warehouse Reports","description":"Nightly reorder and stock-movement reports","updated_on":"2026-10-28T09:00:00+00:00","language":"java"},
+{"slug":"payroll-core","name":"Payroll Core","description":"Out of scope for the hackathon: shows the allow-list at work","updated_on":"2026-09-01T09:00:00+00:00","language":"java"}
+]}

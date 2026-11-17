@@ -1,0 +1,5 @@
+{"issues":[
+{"key":"INV-143","fields":{"summary":"PUT /api/items/{id} accepts negative and over-limit quantity","issuetype":{"name":"Bug"},"status":{"name":"To Do"},"priority":{"name":"High"},"assignee":null}},
+{"key":"INV-142","fields":{"summary":"Show which items need reordering","issuetype":{"name":"Story"},"status":{"name":"In Progress"},"priority":{"name":"Medium"},"assignee":{"displayName":"Alex Dev"}}},
+{"key":"INV-150","fields":{"summary":"Add supplier column to item list","issuetype":{"name":"Story"},"status":{"name":"To Do"},"priority":{"name":"Low"},"assignee":null}}
+]}

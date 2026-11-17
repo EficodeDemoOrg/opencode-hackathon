@@ -1,0 +1,1 @@
+{"id":57,"title":"INV-143: validate quantity on PUT","state":"OPEN","author":{"display_name":"Alex Dev"},"source":{"branch":{"name":"feature/INV-143"}},"destination":{"branch":{"name":"main"}},"description":"Applies the POST quantity rules to PUT. Adds three tests. Not yet reviewed."}

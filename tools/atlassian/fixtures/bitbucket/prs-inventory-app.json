@@ -1,0 +1,4 @@
+{"values":[
+{"id":57,"title":"INV-143: validate quantity on PUT","state":"OPEN","author":{"display_name":"Alex Dev"},"source":{"branch":{"name":"feature/INV-143"}},"destination":{"branch":{"name":"main"}}},
+{"id":55,"title":"Bump sqlite-jdbc","state":"OPEN","author":{"display_name":"Robin Ops"},"source":{"branch":{"name":"chore/sqlite"}},"destination":{"branch":{"name":"main"}}}
+]}

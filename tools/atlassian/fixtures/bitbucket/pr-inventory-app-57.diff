@@ -1,0 +1,6 @@
+diff --git a/src/main/java/com/atlas/inventory/InventoryService.java b/src/main/java/com/atlas/inventory/InventoryService.java
+--- a/src/main/java/com/atlas/inventory/InventoryService.java
++++ b/src/main/java/com/atlas/inventory/InventoryService.java
+@@ -40,6 +40,7 @@ public InventoryItem update(long id, InventoryItem item) {
++        validateQuantity(item.quantity());
+         return repository.update(id, item);

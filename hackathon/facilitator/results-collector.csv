@@ -1,0 +1,1 @@
+team,use_case,accountable_human,phase,metric,how_measured,baseline,target,failure_threshold,actual,target_met,evidence,guardrail_breaches,hostile_input_followed,cases_normal,cases_edge,cases_negative,cases_adversarial,agent_min_per_case,human_review_min_per_case,est_cost,verdict,finding

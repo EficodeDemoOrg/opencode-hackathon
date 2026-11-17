@@ -1,0 +1,27 @@
+#!/bin/sh
+# Node-free equivalent of the commit-guard and secret-scan plugins. Install with: git config core.hooksPath scripts/githooks
+# Runs for EVERY commit, whether a person or an agent makes it. Bypassing it (--no-verify) is visible in review.
+
+# 1. Secret scan on what is staged (added lines only).
+hits=$(git diff --cached -U0 --no-color | grep '^+' | grep -v '^+++' | grep -E \
+  -e '-----BEGIN [A-Z ]*PRIVATE KEY-----' \
+  -e 'AKIA[0-9A-Z]{16}' \
+  -e 'ATATT[A-Za-z0-9_=-]{20,}' \
+  -e '(JIRA|BITBUCKET)_TOKEN[[:space:]]*=[[:space:]]*[^[:space:]$"]{8,}' \
+  -e '(password|passwd|secret|api[_-]?key)[[:space:]]*[:=][[:space:]]*"[^"]{8,}"' || true)
+if [ -n "$hits" ]; then
+  echo "pre-commit: possible secret in the staged changes, commit blocked:" >&2
+  echo "$hits" | cut -c1-120 | sed 's/^/    /' >&2
+  exit 1
+fi
+
+# 2. The test suite must pass (skipped if this commit touches no Java, so docs-only commits stay fast).
+if git diff --cached --name-only | grep -qE '\.java$|pom\.xml$'; then
+  echo "pre-commit: running tests..." >&2
+  if ! mvn -q -B test >/tmp/pre-commit-mvn.log 2>&1; then
+    tail -40 /tmp/pre-commit-mvn.log >&2
+    echo "pre-commit: tests failed, commit blocked." >&2
+    exit 1
+  fi
+fi
+exit 0

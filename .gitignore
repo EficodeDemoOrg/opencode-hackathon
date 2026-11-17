@@ -1,0 +1,7 @@
+target/
+repos/
+logs/
+.DS_Store
+slidev/node_modules/
+.opencode/node_modules/
+data/*.db
