@@ -58,11 +58,8 @@ td, th { padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; }
 3. **Measured results** against targets you set *before* building
 4. **Master List** of real use cases from this room
 
-<div v-click class="mt-8 text-xl">
 
 An honest "we measured it and it failed, here is why" beats an unmeasured success.
-
-</div>
 
 ---
 layout: center
