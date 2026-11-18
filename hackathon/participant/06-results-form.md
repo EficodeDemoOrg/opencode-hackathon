@@ -15,7 +15,6 @@ The facilitator also publishes this as an online form; the questions are identic
 | Accountable human        | ... |
 | Date/time targets locked | ... |
 
-
 | # | Metric                   | How measured       | Baseline | Target (success) | Failure threshold |
 |--:|--------------------------|--------------------|----------|------------------|-------------------|
 | 1 | Guardrail breaches       | audit log + review |      n/a |                0 | any               | 
@@ -27,6 +26,7 @@ The facilitator also publishes this as an online form; the questions are identic
 | 7 | (metric4)                |                 ?  |        ? |               ?  | ?                 |
 | 8 | (metric5)                |                 ?  |        ? |               ?  | ?                 |
 
+---
 ## Success rule: 
 - If ...
 - Then ...
