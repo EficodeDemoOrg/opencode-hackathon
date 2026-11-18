@@ -1,0 +1,36 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "providers": {
+    "azure-foundry": {
+      "name": "Azure Foundry",
+      "env": ["AZURE_FOUNDRY_API_KEY"],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "https://foundry-ohtestuksouth.services.ai.azure.com/openai/v1/"
+      },
+      "models": {
+        "gpt-4.1-mini": {
+          "name": "gpt-4.1-mini",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "gpt-6.1-terra": {
+          "name": "gpt-6.1-terra",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          }
+        }
+      }
+    }
+  },
+  "policies": [
+    { "action": "provider.use", "resource": "*", "effect": "deny" },
+    { "action": "provider.use", "resource": "azure-foundry", "effect": "allow" }
+  ],
+  "model": "azure-foundry/gpt-4.1-mini"
+}
