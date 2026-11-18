@@ -1,18 +1,18 @@
-Phases 5 and 6 Guide: Build, Test and Measure (125 minutes)
+Build, Test and Measure
 ===
 Your job here is to **unblock, not to build**. Keep teams honest about their targets and make sure the measurements get recorded.
 
 # Checkpoints
 Post these in the main chat at the clock times (adjust to your start).
-| Clock | Checkpoint | Ask each team |
-|---|---|---|
-| 15:00 | **Skeleton** (T+15) | "Do you have one end-to-end run, even on fixtures?" |
-| 15:15 | **Guardrails** | "Have you *tried* every 'no' in your matrix and seen it denied?" |
-| 15:30 | **Real inputs** | "Have you run on sandbox data yet? Is the baseline timed?" |
-| 15:50 | **Adversarial** | "Have you planted a hostile instruction and run it?" |
-| **16:10** | **Stop building** | "Move to testing, now. Run the plan on what you have." |
-| 16:30 | Results | "Part B of the form needs filling. Ten minutes left." |
-| 16:45 | Hard stop | "Submit the form." |
+| Clock | Checkpoint        | Ask each team                                                    |
+|-------|-------------------|------------------------------------------------------------------|
+| 13:00 | Skeleton )        | "Do you have one end-to-end run, even on fixtures?"              |
+| 13:15 | **Guardrails**    | "Have you *tried* every 'no' in your matrix and seen it denied?" |
+| 14:00 | **Real inputs**   | "Have you run on sandbox data yet? Is the baseline timed?"       |
+| 14:15 | **Adversarial**   | "Have you planted a hostile instruction and run it?"             |
+| 15:00 | **Stop building** | "All should be testing, now. Run the plan on what you have."     |
+| 15:30 | Results           | "Part B of the form needs filling. Need to prep story for CAB."  |
+| 16:00 | Hard stop         | "Submit the form. Time to face the CAB"                          |
 
 # Early finishers
 Move them on, do not let them idle: run the test plan, add a second adversarial case, try to **break a colleague's guardrail** (pair with another finished team), or write the "reusable pieces" notes for the master document.

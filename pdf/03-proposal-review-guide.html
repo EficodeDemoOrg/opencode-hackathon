@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>4a. Presentations (55 min for up to 6 teams)</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+white-space: pre-wrap;
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">
+:root {
+--bg: #0f1115;
+--fg: #dfe3ea;
+--muted: #8b93a1;
+--accent: #6cb6ff;
+--line: #2a303a;
+--code-bg: #171b22;
+--soft: #161a21;
+}
+@page doc { size: A4 landscape; margin: 14mm 16mm; }
+@page slides { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { background: var(--bg); color: var(--fg); margin: 0; }
+body {
+font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+line-height: 1.5; font-size: 11pt; max-width: none; padding: 0;
+}
+body.doc { page: doc; }
+body.slidev { page: slides; font-size: 26px; line-height: 1.4; }
+
+h1, h2, h3, h4 { color: #fff; line-height: 1.2; break-after: avoid; }
+h1 { font-size: 1.9em; margin: 0 0 .5em; }
+h2 { font-size: 1.4em; margin: 1.3em 0 .4em; border-bottom: 1px solid var(--line); padding-bottom: .15em; }
+h3 { font-size: 1.15em; margin: 1.1em 0 .3em; color: var(--accent); }
+h4 { font-size: 1em; margin: 1em 0 .3em; color: var(--muted); }
+p, ul, ol, pre, table, blockquote { margin: .6em 0; }
+li { margin: .2em 0; }
+a { color: var(--accent); text-decoration: none; }
+strong, b { color: #fff; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 1.2em 0; }
+blockquote { border-left: 3px solid var(--accent); margin-left: 0; padding: .1em 1em; color: var(--muted); }
+header#title-block-header { display: none; }
+input[type=checkbox] { margin-right: .5em; accent-color: var(--accent); }
+li.task-list-item, ul.task-list { list-style: none; }
+ul.task-list { padding-left: .2em; }
+
+code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .88em; }
+:not(pre) > code { background: var(--code-bg); color: #f0c674; padding: .08em .35em; border-radius: 4px; }
+pre, div.sourceCode {
+background: var(--code-bg) !important; border: 1px solid var(--line); border-radius: 6px;
+padding: .6em .9em; white-space: pre-wrap; word-break: break-word; break-inside: avoid;
+}
+pre code { background: none; padding: 0; color: inherit; }
+div.sourceCode { margin: .6em 0; padding: 0; }
+div.sourceCode pre { margin: 0; border: 0; }
+
+table { border-collapse: collapse; width: 100%; font-size: .92em; }
+th, td { border: 1px solid var(--line); padding: .25em .6em; vertical-align: top; }
+th { background: var(--soft); color: #fff; }
+tr { break-inside: avoid; }
+body.slidev table { font-size: .78em; }
+body.slidev td, body.slidev th { padding: .12em .5em; }
+thead, tbody { border: 0; }
+
+.mermaid-fig { text-align: center; margin: .6em 0; break-inside: avoid; }
+.mermaid-fig svg { max-width: 100%; max-height: 330px; height: auto; }
+
+.slide {
+width: 1280px; height: 720px; padding: 52px 80px; overflow: hidden;
+background: var(--bg); break-after: page; break-inside: avoid; position: relative;
+}
+.slide:last-child { break-after: auto; }
+.slide-body { transform-origin: top left; }
+.slide h1 { font-size: 1.7em; }
+.slide h2 { border: 0; margin-top: .6em; font-size: 1.2em; color: var(--muted); font-weight: 500; }
+.slide h3 { margin-top: .5em; }
+.layout-cover .slide-body, .layout-center .slide-body, .layout-section .slide-body { text-align: center; }
+.layout-cover h1 { font-size: 2.6em; }
+.layout-section h1 { font-size: 2.3em; color: var(--accent); margin-bottom: .1em; }
+.layout-section h2 { font-size: 1.3em; margin-top: 0; }
+.layout-center ul, .layout-section ul { display: inline-block; text-align: left; }
+.layout-cover { background: #000; }
+
+.text-center { text-align: center; } .text-left { text-align: left; } .text-right { text-align: right; }
+.text-white { color: #fff; }
+.text-xs { font-size: .7em; } .text-sm { font-size: .85em; } .text-lg { font-size: 1.15em; }
+.text-xl { font-size: 1.3em; } .text-2xl { font-size: 1.6em; }
+.opacity-70 { opacity: .7; } .opacity-50 { opacity: .5; }
+.font-mono { font-family: "SF Mono", Menlo, Consolas, monospace; }
+.inline-block { display: inline-block; }
+.rounded { border-radius: 8px; }
+.bg-red-500\/10 { background: rgba(239, 68, 68, .12); }
+.p-4 { padding: 1rem; } .max-w-2xl { max-width: 42rem; }
+.pt-4 { padding-top: 1rem; } .pt-8 { padding-top: 2rem; }
+.mt-2 { margin-top: .5rem; } .mt-4 { margin-top: 1rem; } .mt-6 { margin-top: 1.5rem; } .mt-8 { margin-top: 2rem; }
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: 1fr 1fr; } .grid-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.gap-4 { gap: 1rem; } .gap-8 { gap: 2rem; }
+.grid > div > :first-child { margin-top: 0; }
+</style>
+</head>
+<body class="doc">
+<div class="doc">
+<h1>Phase 4 Guide: Presentations, Discussion and Targets (100
+minutes)</h1>
+<p>Goal: every team hears constructive, specific feedback on its
+proposal; the room learns from the other proposals; and each team leaves
+with <strong>locked targets</strong> and a safer, tighter design.</p>
+<h1>4a. Presentations (55 min for up to 6 teams)</h1>
+<ul>
+<li><strong>5 minutes per team + 4 minutes Q&amp;A.</strong> Teams
+present <strong>from the proposal document</strong>, no slides.</li>
+<li>Ask the team to cover, in this order: the decision requested; what
+it does and does not do; the <strong>guardrails and who enforces
+them</strong>; the <strong>named human and review step</strong>; how it
+will be tested; the success numbers.</li>
+<li><strong>Scribes</strong>: each team&#39;s scribe writes feedback into
+that team&#39;s proposal under &quot;Feedback received&quot;. The helper records
+cross-cutting themes in a shared list.</li>
+<li>Hold the time. Say &quot;one more question&quot; at 3 minutes of Q&amp;A.</li>
+</ul>
+<h2>Q&amp;A prompts (use the best two per team)</h2>
+<ul>
+<li>What is the worst it can do if the model is wrong? If a ticket
+contains hostile text?</li>
+<li>Which guardrail is a rule and which is a sentence in a prompt?</li>
+<li>Is there a second route around that denial?</li>
+<li>Who reads the output at 4:30 on a Friday, and what do they
+check?</li>
+<li>What is your baseline, and how did you measure it?</li>
+<li>What would make you <strong>stop</strong> the pilot?</li>
+<li>What would you need to see to trust it on a production
+repository?</li>
+</ul>
+<h1>4b. Cross-team discussion (25 min)</h1>
+<p>Three rounds, about 8 minutes each. Put the question on screen, use
+the shared list.</p>
+<ol type="1">
+<li><strong>What is good about each proposal?</strong> One specific
+thing per proposal. Start positive, and name the practice, not the
+person (&quot;the audit trail that records the config version&quot;).</li>
+<li><strong>Where else would it be useful?</strong> For each proposal:
+which other team or repository could use it, and what would they change?
+Capture the reusable pieces (a skill, a sub-agent, a hook) in the master
+document as &quot;reusable&quot;.</li>
+<li><strong>How do we make it safer and more constrained?</strong> For
+each proposal, one concrete tightening: a narrower permission, an
+allow-list, a smaller batch size, an extra check, a stop condition. Push
+for <strong>enforced</strong> changes, not extra prompt text.</li>
+</ol>
+<h2>Facilitation moves</h2>
+<ul>
+<li>&quot;Which of these controls would still hold if the model ignored the
+prompt?&quot;</li>
+<li>&quot;Say the worst case in one sentence.&quot;</li>
+<li>&quot;Could you make that read-only?&quot;</li>
+<li>&quot;What is the smallest version you could try first?&quot;</li>
+<li>If two teams solved the same sub-problem differently, compare them
+side by side.</li>
+</ul>
+<h1>4c. Revise and lock targets (20 min)</h1>
+<ol type="1">
+<li>Teams update the proposal with the accepted feedback (10 min).</li>
+<li>Teams fill <strong>Part A: Targets</strong> of the <a href="../participant/06-results-form.md">results form</a> (10 min).
+Check each team&#39;s targets before they go to build:
+<ul>
+<li>every metric has a baseline plan, a target and a failure
+threshold;</li>
+<li>the three mandatory metrics are there;</li>
+<li>at least one adversarial test case is planned;</li>
+<li>the success rule is written as if/then.</li>
+</ul></li>
+<li>After the targets are submitted they are <strong>locked</strong>:
+results are compared to them in the readout. If a team wants to change
+one, they change it in the results form <em>with a reason</em>, not
+silently.</li>
+</ol>
+<h1>Proposal rubric</h1>
+<p>Use it to give each team 1–4 scores privately (or to guide your
+notes). 1 = missing, 2 = weak, 3 = solid, 4 = board-ready.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>What a 4 looks like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Problem and value</strong></td>
+<td>Quantified baseline; clear non-goals</td>
+</tr>
+<tr>
+<td><strong>Guardrails</strong></td>
+<td>Each control names what enforces it; mostly hard controls; second
+routes considered; blast radius stated</td>
+</tr>
+<tr>
+<td><strong>Human accountability</strong></td>
+<td>Named owner; a named human reads <em>every</em> change; recorded in
+the commit; audit trail</td>
+</tr>
+<tr>
+<td><strong>Verification</strong></td>
+<td>Automatic checks before the human sees it; says what it cannot
+catch</td>
+</tr>
+<tr>
+<td><strong>Test plan</strong></td>
+<td>Normal, edge, negative and adversarial cases; baseline; sample
+size</td>
+</tr>
+<tr>
+<td><strong>Metrics</strong></td>
+<td>Baseline, target and failure threshold for each; if/then success
+rule</td>
+</tr>
+<tr>
+<td><strong>Reusability</strong></td>
+<td>Pieces another team could pick up</td>
+</tr>
+<tr>
+<td><strong>Constraint</strong></td>
+<td>Smallest scope that delivers value; stop conditions; kill
+switch</td>
+</tr>
+</tbody>
+</table>
+<p>Common weak spots to probe: guardrails that are prompts; &quot;the
+developer reviews it&quot; with no record; metrics without baselines; no
+adversarial case; scope that is &quot;the whole pipeline&quot;.</p>
+</div>
+</body>
+</html>

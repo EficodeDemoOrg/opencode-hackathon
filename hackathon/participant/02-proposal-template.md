@@ -4,12 +4,12 @@ Write this **as if for the change acceptance board (CAB)**. The board decides wh
 
 Copy this file to `hackathon/results/<team>-proposal.md` (or your team's shared doc).
 
-| | |
-|---|---|
-| Team | |
-| Proposal owner (**accountable human**) | |
-| Date / version | |
-| Idea # from the master list | |
+| Proposal headline   |                          |
+|---------------------|--------------------------|
+| Team                | (*team name*)            |
+| Proposal owner      | (*accountable human*)    |
+| Idea                | (*from the master list*) |
+---
 
 # 1. Summary and decision requested
 Three sentences: what the agent does, for whom, and the **decision you want from the board** (for example: "approve a 4-week pilot on repository X with team Y, with the limits below").
@@ -20,12 +20,13 @@ Three sentences: what the agent does, for whom, and the **decision you want from
 - **What the agent does not do** (non-goals).
 
 # 3. Scope
-| Item | In scope | Out of scope |
-|---|---|---|
-| Systems and repositories | | |
-| Environments (never production by default) | | |
-| Data touched and its classification | | |
-| Kinds of change the agent may propose | | |
+| Item                                       | In scope | Out of scope |
+|--------------------------------------------|----------|--------------|
+| Systems and repositories                   |          |              |
+| Environments (never production by default) |          |              |
+| Data touched and its classification        |          |              |
+| Kinds of change the agent may propose      |          |              |
+---
 
 # 4. Design
 In one diagram or a short list:
@@ -34,24 +35,36 @@ In one diagram or a short list:
 - the **inputs**, and which of them are **untrusted** (tickets, PR text, logs, code from other repos);
 - the **outputs**, and where they land (draft, branch, comment).
 
-| Component | Type (agent/sub-agent/command/skill/tool) | Purpose | Reads | Writes | Shell commands allowed |
-|---|---|---|---|---|---|
-| | | | | | |
+| Component | Type      | Purpose  | Reads | Writes | Shell commands allowed |
+|-----------|-----------|----------|-------|--------|------------------------|
+|    *name* |     agent |        - |     - |      - |                      - |
+|    *name* | sub-agent |        - |     - |      - |                      - |
+|    *name* |   command |        - |     - |      - |                      - |
+|    *name* |     skill |        - |     - |      - |                      - |
+|    *name* |      tool |        - |     - |      - |                      - |
+|    *name* |       ... |        - |     - |      - |                      - |
+---
 
 # 5. Guardrails
 Use the [guardrails menu](03-guardrails-menu.md). Show **how each is enforced**, not just that it exists.
 
 ## 5.1 Permission matrix
-| Capability | Allowed? | Enforced by (rule / hook / tool code / CI) | How we test that it holds |
-|---|---|---|---|
-| Edit files (which paths?) | | | |
-| Run shell commands (which?) | | | |
-| Network / web fetch | | | |
-| Read Jira / Bitbucket (which projects/repos?) | | | |
-| Write to Jira / Bitbucket | no | | |
-| Commit / push | no | | |
-| Call other agents | | | |
-| Read secrets / environment | no | | |
+| Capability                    | Allowed? | Enforced by? *) | How we test that it holds |
+|-------------------------------|----------|-----------------|---------------------------|
+| Edit files (which paths?)     |          |                 |                           |
+| Run shell commands (which?)   |          |                 |                           |
+| Network / web fetch           |          |                 |                           |
+| Read Jira (which projects?)   |          |                 |                           |
+| Read Bitbucket (which repos?) |          |                 |                           |
+| Write to Jira / Bitbucket     |       no |                 |                           |
+| Commit / push                 |       no |                 |                           |
+| Call other agents             |          |                 |                           |
+| Read secrets / environment    |       no |                 |                           |
+
+*) i.e. permission rule / hook / tool code / CI
+
+
+---
 
 ## 5.2 Blast radius
 The worst thing that can happen if the agent is **wrong**, and if it is **manipulated by hostile input**. State the limit of the damage and what contains it.
@@ -68,45 +81,52 @@ Iteration limits, what makes the pipeline stop and report instead of retrying, a
 
 # 7. Verification (before a human sees it)
 The checks that run **automatically** before human review, and what each catches.
-| Check | Catches | Deterministic? | Blocks hand-over if it fails? |
-|---|---|---|---|
-| e.g. `mvn test` | regressions | yes | yes |
-| e.g. reviewer sub-agent | spec mismatch | no | reports |
-| | | | |
+
+| Check                   | Catches       | Deterministic? | Blocks hand-over if it fails? |
+|-------------------------|---------------|----------------|-------------------------------|
+| e.g. `mvn test`         | regressions   |            yes |                           yes |
+| e.g. reviewer sub-agent | spec mismatch |             no |                       reports |
+| ...                     |               |                |                               |
 
 Say what **cannot** be verified automatically, and how the human covers it.
 
 # 8. Test and validation plan
 Specific enough that someone else could run it.
-| # | Scenario | Type (normal / edge / **negative** / **adversarial**) | Input | Expected result | Pass if |
-|--:|---|---|---|---|---|
-| 1 | | normal | | | |
-| 2 | | edge | | | |
-| 3 | | negative: asked for something out of scope | | refused/stopped | |
-| 4 | | adversarial: hostile text in a ticket or PR | | ignored and reported | |
-| 5 | | repeat of #1, three runs | | similar result | |
+
+| # | Type *)      | Scenario | Input | Result       | Pass if:           |
+|--:|--------------|----------|-------|--------------|--------------------|
+| 1 | normal       |        ? |     ? | as expected? |    delta < epsilon |
+| 2 | edge         |        ? |     ? | as expected? |    delta < epsilon |
+| 3 | negative     |        ? |     ? | as expected? |  refused + stopped |
+| 4 | adversarial  |        ? |     ? | as expected? | ignored + reported |
+
+*) **negative**: asked for something out of scope, nonsensical 
+*) **adversarial**: hostile text (jailbreak attempt) in a ticket or PR
 
 - **Baseline**: how you will measure how long the task takes today (a timed manual run on the same inputs).
 - **Sample size**: how many real or realistic cases you will run.
 
 # 9. Metrics and success criteria
 Choose from the [metrics catalogue](04-metrics-catalogue.md). **Commit to the numbers before you build.** These go into the results form.
-| Metric | How measured | Baseline | **Target (success)** | **Failure threshold** |
-|---|---|---|---|---|
-| | | | | |
-| | | | | |
-| **Guardrail breaches** | audit log + review | n/a | **0** | any |
+
+| Metric                  | How measured       | Baseline | **Target (success)** | **Failure threshold** |
+|-------------------------|--------------------|----------|----------------------|-----------------------|
+| **Guardrail breaches**  | audit log + review |      n/a |                **0** |                   any |
+|                         |                    |          |                      |                       |
+|                         |                    |          |                      |                       |
+
+---
 
 State what you will do with each outcome: success, partial, fail.
 
 # 10. Risks and mitigations
-| Risk | Likelihood | Impact | Mitigation | Residual risk |
-|---|---|---|---|---|
-| Plausible but wrong output accepted by a tired reviewer | | | | |
-| Prompt injection via an input | | | | |
-| Over-reliance / skills atrophy | | | | |
-| Sensitive data in prompts or logs | | | | |
-| | | | | |
+| Risk                                                    | Likelihood | Impact | Mitigation | Residual risk |
+|---------------------------------------------------------|------------|--------|------------|---------------|
+| Plausible but wrong output accepted by a tired reviewer |            |        |            |               |
+| Prompt injection via an input                           |            |        |            |               |
+| Over-reliance / skills atrophy                          |            |        |            |               |
+| Sensitive data in prompts or logs                       |            |        |            |               |
+| Other...                                                |            |        |            |               |
 
 # 11. Rollout, rollback and dependencies
 - Pilot: where, who, how long, entry and exit criteria.
@@ -115,15 +135,15 @@ State what you will do with each outcome: success, partial, fail.
 - Cost: expected model/token cost per run.
 
 # 12. Approvals
-| Role | Name | Decision | Date |
-|---|---|---|---|
-| Proposal owner | | | |
-| Security / risk reviewer | | | |
-| Engineering lead | | | |
+| Role                     | Name | Decision | Date |
+|--------------------------|------|----------|------|
+| Proposal owner           |      |          |      |
+| Security / risk reviewer |      |          |      |
+| Engineering lead         |      |          |      |
 
 ---
 ## Self-check before presenting
-- [ ] A reader who knows nothing about opencode can follow sections 1–3.
+- [ ] A reader who knows nothing about OpenCode can follow sections 1–3.
 - [ ] Every guardrail in 5 names *what enforces it*; none relies only on a prompt.
 - [ ] Every code change has a **named human** who reads it.
 - [ ] The test plan includes a negative and an adversarial case.

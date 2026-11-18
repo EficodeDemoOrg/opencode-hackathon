@@ -1,20 +1,34 @@
 Agentic Delivery Hackathon
 ===
-A one-day, remote hackathon for 10–20 experienced developers who completed the intermediate and advanced opencode trainings. Participants propose real use cases, write a change-board proposal with guardrails, human accountability, a test plan and success metrics, then build and measure it. **No Node.js required.**
+A one-day, remote-delivery hackathon for ~20 experienced developers who completed the advanced opencode training workshop. 
 
-Facilitator: start with [`FACILITATOR-GUIDE.md`](FACILITATOR-GUIDE.md). Slides: [`slidev/hackathon.md`](../slidev/hackathon.md), run with `cd slidev && npm install && npm run hackathon` (slides are only for the presenter, so Node is needed on your machine only).
+Participants propose real use cases, write a change-board proposal with guardrails, human accountability, a test plan and success metrics, then build and measure it. 
 
-# The day
-| Phase | Min | Participants do | Material |
-|---|---:|---|---|
-| 0. Welcome | 15 | Preflight, ground rules | [before you arrive](participant/00-before-you-arrive.md) |
-| 1. Review & demo | 60 | Watch: permissions, sub-agents, commands, skills, deliver/ship, Jira and Bitbucket | [demo script](facilitator/01-demo-script.md) |
-| 2. Ideation + teams | 45 | Idea cards, share-out, form teams of 3–5 | [idea card](participant/01-idea-card.md), [playbook](facilitator/02-ideation-playbook.md), [master list](facilitator/master-ideas.md) |
-| 3. Proposal | 60 | Write the CAB proposal | [template](participant/02-proposal-template.md), [guardrails](participant/03-guardrails-menu.md), [metrics](participant/04-metrics-catalogue.md) |
-| 4. Present + discuss | 100 | Present, give feedback, tighten, lock targets | [review guide](facilitator/03-proposal-review-guide.md), [results form](participant/06-results-form.md) |
-| 5. Build | 85 | Build the agents/pipeline | [build playbook](participant/05-build-playbook.md), [support guide](facilitator/04-build-and-test-support.md) |
-| 6. Test & measure | 40 | Run the test plan, record actuals | [results form](participant/06-results-form.md) |
-| 7. Readout & close | 40 | Targets vs actuals, retro | [close-out](facilitator/05-results-and-closeout.md) |
+**No Node.js required.**
+
+Facilitator: starts with [`FACILITATOR-GUIDE.md`](FACILITATOR-GUIDE.md). 
+Slides: [`slidev/hackathon.md`](../slidev/hackathon.md), run with `cd slidev && npm install && npm run hackathon` (slides are only for the presenter, so Node is needed on your machine only).
+
+# Planned schedule
+Let's try and stick as close as possible to this: 
+
+| Clock | Min | Phase                      | What happens                                                                                             | Output                      |
+|-------|-----|----------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------|
+| 09:00 |  15 | **Welcome**                | Goal, agenda, ground rules, preflight check in: [before you arrive](participant/00-before-you-arrive.md) | everyone green on preflight |
+| 09:15 |  80 | **Review + demo**          | Permissions, sub-agents, commands, skills, end-to-end deliver/ship, Jira and Bitbucket skills.           |           shared vocabulary |
+| 10:30 |  20 | **Ideation**               | Use case brain storm [idea card](participant/01-idea-card.md)                                            |        master list of ideas |
+| 10:55 |  15 | **Team formation**         | Four teams of 3-5 members around the ideas                                                               |      teams + breakout rooms |
+| 11:10 |  50 | **Proposal writing**       | Teams write the proposals for the CAB following the [template](participant/02-proposal-template.md)      |     proposal draft per team |
+| 12:00 |  60 | **Lunch**                  |                                                                                                          |                             |
+| 13:00 |  25 | **Proposal presentations** | 3-5 min per team + Q&A, scribe takes notes [results form](participant/06-results-form.md)                |              feedback notes |
+| 13:25 |  05 | **Commit to targets**      | Teams update the proposal and fill the **targets** half of the results form                              |              targets locked |
+| 13:30 |  85 | **Build**                  | Teams [build](participant/05-build-playbook.md). Oskar helps where needed.                               |            working pipeline |
+| 14:30 |  40 | **Test & measure**         | Run the test plan, record actuals in the results [results form](participant/06-results-form.md).         |              results logged |
+| 15:30 |  30 | **Presentation prep**      | From code prototype to presentable project story                                                         |                             |
+| 16:00 |  45 | **Team presentations**     | What we did, what went well, what needs improvement, [Close-out](facilitator/05-results-and-closeout.md) |             results summary |
+| 16:45 |  15 | **Retro & close**          | Discussion. What was learned? What happens next? What will you bring to your team? Feedback to Oskar?    |                    feedback |
+---
+
 
 # What the participants get
 - The **inventory app** and the deliver/ship agents from the training (`preparation/deliver_ship`, installed with `scripts/stage-demo.sh`).
@@ -25,13 +39,17 @@ Facilitator: start with [`FACILITATOR-GUIDE.md`](FACILITATOR-GUIDE.md). Slides: 
 ```text
 hackathon/
   FACILITATOR-GUIDE.md      run of show, prep checklist, roles, remote tips
-  participant/              handouts and templates (give these to participants)
+  participant/              handouts and templates (for the participants)
   facilitator/              demo script, playbooks, rubric, form spec, master-ideas template
   results/                  where teams commit their proposal and results (no secrets, no real data)
-tools/atlassian/            read-only Jira and Bitbucket client, fixtures
+tools/
+  atlassian/                read-only Jira and Bitbucket client, fixtures
 scripts/                    preflight, stage-demo, githooks
-.opencode/                  jira-issues and bitbucket-repos skills, atlassian-reader agent, /jira, /spec-from-jira
+.opencode/                  
+  agents/                   atlassian-reader
+  skills/                   jira-issues, bitbucket-repos, ...
+  commands/                 /jira, /spec-from-jira, ...
 ```
 
 # Status
-Ready to rehearse, **not yet rehearsed end to end with a model.** Verified: the Atlassian tool against fixtures and a local mock server, the git hooks, `scripts/preflight.sh` and `scripts/stage-demo.sh`, and that `mvn test` passes. Not verified: any run against a real Jira/Bitbucket, the opencode agents and commands with a live model, and the PowerShell scripts (`.ps1`) on Windows. See the "day before" checklist in the facilitator guide.
+Verified: the Atlassian tool against fixtures and a local mock server, the git hooks, `scripts/preflight.sh` and `scripts/stage-demo.sh`, and that `mvn test` passes. Not verified: any run against a real Jira/Bitbucket, the opencode agents and commands with a live model, and the PowerShell scripts (`.ps1`) on Windows. See the "day before" checklist in the facilitator guide.

@@ -3,7 +3,7 @@ Idea Card
 Copy into the shared master-ideas document. One card per idea, 1–3 cards, about 3 minutes each. Short answers beat long ones.
 
 ```
-Title:            (a verb phrase: "Draft acceptance criteria from a ticket")
+Title:            (one line: "Draft acceptance criteria from a ticket")
 Proposed by:
 
 The pain:         What do you do today, how often, and how long does it take?

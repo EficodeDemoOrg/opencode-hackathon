@@ -1,4 +1,4 @@
-Phase 7 Guide: Results Readout and Close-out (40 minutes)
+Results Readout and Close-out
 ===
 
 # Readout (30 min)
@@ -23,21 +23,21 @@ Then 8–10 minutes of discussion across teams:
 
 # Retro (10 min)
 Three questions, answered in chat in one minute, then read out:
-1. What will you take back to your team on Monday?
+1. What will you take back to your team tomorrow?
 2. What would you change about today?
 3. What is the one control you will insist on before anyone runs an agent on production code?
 
 # Follow-up report (within a week)
 Send participants and sponsors a short report:
-| Section | Content |
-|---|---|
-| Summary | What the day produced, in five lines |
-| Master list | Every idea from `master-ideas.md`, with which were built |
-| Results table | Per team: targets, actuals, verdict |
-| Guardrail findings | Second routes found, hostile-input incidents, guardrail changes made |
-| Reusable pieces | Skills, agents, commands, hooks worth adopting; who owns them |
-| Recommendations | Pilots to start, with the conditions; changes to the standard configuration |
-| Parked ideas | The ones not built |
+
+| Section            | Content                                                                      |
+|--------------------|------------------------------------------------------------------------------|
+| Summary            | Summary of what the day produced,                                            |
+| Master list        | Every idea from `master-ideas.md`, with which were built, which were parked  |
+| Results table      | Per team: targets, actuals, verdict                                          |
+| Guardrail findings | Second routes found, hostile-input incidents, guardrail changes made         |
+| Reusable pieces    | Skills, agents, commands, hooks worth adopting; who owns them                |
+| Recommendations    | Pilots to start, with the conditions; changes to the standard configuration  |
 
 ## Reminders to include
 - Rotate or revoke every token issued for the day.

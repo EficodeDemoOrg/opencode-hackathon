@@ -4,8 +4,8 @@ Audience: 10–20 experienced developers who completed the intermediate and adva
 
 # The goal
 By the end of the day every team has:
-1. a **proposal** written as if for a change acceptance board (CAB), with guardrails, human accountability, a test plan and success metrics;
-2. a **working agent/pipeline** built from skills, commands, sub-agents and permissions (no Node.js needed);
+1. a **proposal** written as if for a change acceptance board (CAB), with guardrails, human accountability, a test plan and success metrics.
+2. a **working agent/pipeline** built from skills, commands, sub-agents and permissions (no Node.js needed).
 3. **measured results** against the targets they committed to, entered in the shared results form.
 
 And you leave with a **master list of real use cases** from the room, which is the most valuable artefact for the follow-up with their teams.
@@ -13,35 +13,36 @@ And you leave with a **master list of real use cases** from the room, which is t
 The teaching point of the day, in one sentence: *an agent is only as trustworthy as the constraints around it and the evidence you collect about it.* Every phase pushes on that.
 
 # Run of show
-Times are an example for a 09:00 start; shift them, but keep the durations. Total: 8.5 h including breaks.
+We start at 09:00, and have 8 hours, including breaks. Lunchbreak at 12:00, and there are opportunities for bio-breaks after demo, during the ideation, proposal writing, and build phase. Try to finish review and demo quickly. No hard gate at 14:30: teams that finish early start testing while others are still building. The hard rule is: **at 15:00 everyone stops building** and runs their test plan on whatever exists. A half-built pipeline with honest measurements is a better outcome than a finished one that was never tested.
 
-| Clock | Min | Phase | What happens | Output |
-|---|---:|---|---|---|
-| 09:00 | 15 | **0. Welcome** | Goal, agenda, ground rules, preflight check in chat | everyone green on preflight |
-| 09:15 | 70 | **1. Review + demo** | Permissions, sub-agents, commands, skills, end-to-end deliver/ship, Jira and Bitbucket skills. Script: [demo-script](facilitator/01-demo-script.md) | shared vocabulary |
-| 10:15 | 10 | Break | | |
-| 10:25 | 35 | **2. Ideation** | Idea cards, share-out, you build the master list. [Playbook](facilitator/02-ideation-playbook.md) | `master-ideas.md` |
-| 11:00 | 10 | **2b. Team formation** | Teams of 3–5 around the ideas | teams + breakout rooms |
-| 11:10 | 60 | **3. Proposal writing** | Teams write the CAB proposal | proposal draft per team |
-| 12:10 | 45 | Lunch | You: review proposals, pick presentation order | |
-| 12:55 | 55 | **4a. Proposal presentations** | 5 min + 4 min Q&A per team, scribe takes notes | feedback notes |
-| 13:50 | 25 | **4b. Cross-team discussion** | What is good, where else it is useful, how to make it safer and more constrained. [Guide](facilitator/03-proposal-review-guide.md) | improvement list |
-| 14:15 | 20 | **4c. Revise and commit to targets** | Teams update the proposal and fill the **targets** half of the results form | targets locked |
-| 14:35 | 10 | Break | | |
-| 14:45 | 85 | **5. Build** | Teams build; you float. Early finishers start 6. [Support guide](facilitator/04-build-and-test-support.md) | working pipeline |
-| 16:10 | 40 | **6. Test & measure** | Run the test plan, record actuals in the results form (teams move here as they finish) | results rows |
-| 16:50 | 30 | **7. Readout & close** | Each team: targets vs actuals in 2 min; discussion; next steps. [Close-out](facilitator/05-results-and-closeout.md) | results summary |
-| 17:20 | 10 | Retro | What to keep, what to change, who takes what back to their team | |
+| Clock | Min | Phase                      | What happens                                                                                             | Output                      |
+|-------|-----|----------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------|
+| 09:00 |  15 | **Welcome**                | Goal, agenda, ground rules, preflight check in chat                                                      | everyone green on preflight |
+| 09:15 |  80 | **Review + demo**          | Permissions, sub-agents, commands, skills, end-to-end deliver/ship, Jira and Bitbucket skills.           |           shared vocabulary |
+| 10:30 |  20 | **Ideation**               | Idea cards, share-out, you build the master list. [Playbook](facilitator/02-ideation-playbook.md)        |           `master-ideas.md` |
+| 10:55 |  15 | **Team formation**         | Four teams of 3-5 members around the ideas                                                               |      teams + breakout rooms |
+| 11:10 |  50 | **Proposal writing**       | Teams write the proposals for the CAB with metrics, guardrails, and verification.                        |     proposal draft per team |
+| 12:00 |  60 | **Lunch**                  | You: review proposals, pick presentation order                                                           |   participants re-energised |
+| 13:00 |  25 | **Proposal presentations** | 3-5 min per team + Q&A, scribe takes notes [Guide](facilitator/03-proposal-review-guide.md)              |              feedback notes |
+| 13:25 |  05 | **Commit to targets**      | Teams update the proposal and fill the **targets** half of the results form                              |              targets locked |
+| 13:30 |  85 | **Build**                  | Teams build. Oskar floats. [Support guide](facilitator/04-build-and-test-support.md)                     |            working pipeline |
+| 14:30 |  40 | **Test & measure**         | Run the test plan, record actuals in the results form (teams move here as they finish)                   |                results rows |
+| 15:30 |  30 | **Presentation prep**      | From code prototype to presentable project story                                                         |                             |
+| 16:00 |  45 | **Team presentations**     | What we did, what went well, what needs improvement, [Close-out](facilitator/05-results-and-closeout.md) |             results summary |
+| 16:45 |  15 | **Retro & close**          | Discussion. What was learned? What happens next? What will you bring to your team? Feedback to Oskar?    |                    feedback |
+---
 
-**Phase 5 and 6 overlap by design.** Do not hold a hard gate at 16:10: teams that finish early start testing while others are still building. The hard rule is: **at 16:10 everyone stops building** and runs their test plan on whatever exists. A half-built pipeline with honest measurements is a better outcome than a finished one that was never tested.
-
-## If time runs short, cut in this order
-1. Phase 4c: teams fill targets right after their own presentation instead.
-2. Phase 4b: cut to 15 min and keep only "how to make it safer".
-3. Retro: do it in chat.
-4. Phase 1: skip the commands segment; the participants have seen it.
-
+## If time runs short...
 **Don't cut:** guardrails and verification in the proposals, the targets form before building, and the measured results. Those are the point.
+
+**Instead sacrifice:** 
+1. Skip the commands segment of the review and demo.
+2. Teams choose their metrics and fill their  targets right after their own presentation instead.
+3. Cut to 15 min and keep only "how to make it safer".
+4. Team presentations can merge with retro.
+5. Shorten presentation prep. 
+6. Retro: leave it for them on Friday.
+
 
 # Preparation checklist
 ## One week before
